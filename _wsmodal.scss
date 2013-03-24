@@ -1,20 +1,4 @@
-.wsmodal-open {
-    overflow: hidden;
-}
-  
-.wsmodal-modal-bg { 
-    position: fixed; 
-    height: 100%;
-    width: 100%;
-    background: #000;
-    opacity: 0.7;
-    z-index: 100;
-    display: none;
-    top: 0;
-    left: 0; 
-}
-
-.wsmodal-modal {
+.wsmodal {
     visibility: hidden;
     top: 100px; 
     left: 50%;
@@ -31,13 +15,19 @@
         margin-top:0 !important;
     }
 }
-    
-.wsmodal-modal.tiny   { width: 200px; margin-left: -140px;}
-.wsmodal-modal.small  { width: 400px; margin-left: -240px;}
-.wsmodal-modal.large  { width: 600px; margin-left: -340px;}
-.wsmodal-modal.huge   { width: 800px; margin-left: -440px;}
+.wsmodal__bg { 
+    position: fixed; 
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: 0.7;
+    z-index: 100;
+    display: none;
+    top: 0;
+    left: 0; 
+}
 
-.wsmodal-modal .close-button {
+.wsmodal__close-btn {
     font-size: 2em;
     line-height: .5;
     position: absolute;
@@ -51,19 +41,26 @@
         color: darken($base-ui-color, 40);
     }
 } 
+    
+.wsmodal--tiny   { width: 200px; margin-left: -140px;}
+.wsmodal--small  { width: 400px; margin-left: -240px;}
+.wsmodal--large  { width: 600px; margin-left: -340px;}
+.wsmodal--huge   { width: 800px; margin-left: -440px;}
+
+
 
 
 @if $responsive == true{
 
 @include media-query(lap){
-    .wsmodal-modal {
+    .wsmodal {
         width: 70% !important;
         margin-left: -36% !important;
     }
 }
 
 @include media-query(palm){
-    .wsmodal-modal {
+    .wsmodal {
         top:$base-spacing-unit !important;
         width: auto !important;
         left: $base-spacing-unit !important;
