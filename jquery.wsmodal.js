@@ -1,5 +1,5 @@
 /*!
- * jquery.wsmodal.js v0.1
+ * jquery.wsmodal.js v0.1.1
  * http://wingsline.com
  *
  * Copyright 2013 Arpad Olasz
@@ -20,8 +20,8 @@
      * @type {Object}
      */
     global = {
-      bg: 'wsmodal-modal-bg',
-      close : 'close-wsmodal-modal',
+      bg: 'wsmodal__bg',
+      close : 'wsmodal__close',
       opacity: 0.7,
       speed: 200,
       /**
