@@ -1,0 +1,76 @@
+.wsmodal-open {
+    overflow: hidden;
+}
+  
+.wsmodal-modal-bg { 
+    position: fixed; 
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: 0.7;
+    z-index: 100;
+    display: none;
+    top: 0;
+    left: 0; 
+}
+
+.wsmodal-modal {
+    visibility: hidden;
+    top: 100px; 
+    left: 50%;
+    margin-left: -300px;
+    width: 520px;
+    background: #eee no-repeat -200px -80px;
+    position: fixed;
+    z-index: 101;
+    padding: $base-spacing-unit;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.4);
+    text-shadow:1px 1px 0 #fff;
+    h3 {
+        margin-top:0 !important;
+    }
+}
+    
+.wsmodal-modal.tiny   { width: 200px; margin-left: -140px;}
+.wsmodal-modal.small  { width: 400px; margin-left: -240px;}
+.wsmodal-modal.large  { width: 600px; margin-left: -340px;}
+.wsmodal-modal.huge   { width: 800px; margin-left: -440px;}
+
+.wsmodal-modal .close-button {
+    font-size: 2em;
+    line-height: .5;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: darken($base-ui-color, 20);
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none !important;
+    &:active{
+        color: darken($base-ui-color, 40);
+    }
+} 
+
+
+@if $responsive == true{
+
+@include media-query(lap){
+    .wsmodal-modal {
+        width: 70% !important;
+        margin-left: -36% !important;
+    }
+}
+
+@include media-query(palm){
+    .wsmodal-modal {
+        top:$base-spacing-unit !important;
+        width: auto !important;
+        left: $base-spacing-unit !important;
+        margin-left: -$half-spacing-unit !important;
+        right:$half-spacing-unit !important;
+        padding-bottom:$half-spacing-unit !important;
+    }
+}
+
+}
